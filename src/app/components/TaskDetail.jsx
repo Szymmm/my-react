@@ -11,20 +11,28 @@ const TaskDetail = ({
 }) => (
     <div>
         <h2>
-            {task.name}
+            <div>
+                <input value={task.name} />
+            </div>
         </h2>
-        <button>
-            Complete / Reopen task
-        </button>
+        <div>
+            <button>
+                Complete / Reopen task
+            </button>
+        </div>
 
-        <select>
-            {groups.map(group=>(
-                <option key={group.id} value={group.id}>{group.name}</option>
-            ))}
-        </select>
-        <Link to="/dashboard">
-            <button>Done</button>
-        </Link>
+        <div>
+            <select>
+                {groups.map(group=>(
+                    <option key={group.id} value={group.id}>{group.name}</option>
+                ))}
+            </select>
+        </div>
+        <div>
+            <Link to="/dashboard">
+                <button>Done</button>
+            </Link>
+        </div>
     </div>
 );
 
