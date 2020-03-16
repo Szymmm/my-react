@@ -19,7 +19,12 @@ export const store = createStore(
                        group:action.groupID,
                        owner:action.ownerID,
                        isComplete: false
-                   } ]
+                   }]
+                   case mutations.SET_TASK_COMPLETE:
+                       return tasks.map(task=>{
+                            return(task.id === action.taskID) ? {...task,isComplete:action.isComplete} : 
+                            task;
+                       });
             }
             return tasks;
         },
